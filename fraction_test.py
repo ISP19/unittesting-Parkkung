@@ -5,7 +5,27 @@ from fraction import Fraction
 
 
 class FractionTest(unittest.TestCase):
-    """Test the methods and constructor of the Fraction class. """
+
+
+    def test_init(self):
+        """test for fraction construction
+        """
+        f = Fraction(5)
+        self.assertEquals(1,f.denominator)
+        f = Fraction(5, -3)
+        self.assertEqual(-5, f.numerator)
+        f = Fraction(-8, -3)
+        self.assertEqual(8, f.numerator)
+        f = Fraction(0, 2)
+        self.assertEqual(0, f.numerator)
+        f = Fraction(5, 9)
+        self.assertEqual(9, f.denominator)
+        f = Fraction(1, -6)
+        self.assertEqual(6, f.denominator)
+        f = Fraction(1, 3)
+        self.assertEqual(3, f.denominator)
+        f = Fraction(0, 4)
+        self.assertEqual(0, f.numerator)
 
     def test_str(self):
         f = Fraction(3, -1)
@@ -26,12 +46,11 @@ class FractionTest(unittest.TestCase):
         f = Fraction(99)
         self.assertEqual("99", f.__str__())
 
-    # TODO Write tests for __init__, __eq__, +, *.
-    # Here is an example, but you must add more test cases.  
-    # The test requires that your __eq__ is correct.
     def test_add(self):
         # 3/4 = 2/3 + 1/12
         self.assertEqual(Fraction(3,4), Fraction(1,12)+Fraction(2,3))
+        # 31 / 35 = 3 / 5 + 2 / 7
+        self.assertEqual(Fraction(30, 35), Fraction(3, 5) + Fraction(2, 7))
 
     def test_eq(self):
         f = Fraction(1,2)
@@ -43,3 +62,8 @@ class FractionTest(unittest.TestCase):
         self.assertFalse(f.__eq__(h))
         #TODO write more tests using other cases.
         # Consider special values like 0, 1/0, -1/0
+
+
+
+if __name__ == '__main__':
+    unittest.main(fraction_test)
