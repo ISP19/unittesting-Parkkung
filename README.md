@@ -17,3 +17,11 @@ Write a table describing your test cases.
 
 
 ## Test Cases for Fraction
+
+| Test case              |  Expected Result    |
+|------------------------|---------------------|
+| test init function     |  check data         |
+| test str function      |  check output|
+| fraction + fraction    |  return sum of two fractios as a new fraction |
+| fraction * fraction    |  return the multiple of two fractions as a new fraction |
+| equal                  |  Does two fractions are equals     |
