@@ -47,10 +47,29 @@ class FractionTest(unittest.TestCase):
         self.assertEqual("99", f.__str__())
 
     def test_add(self):
+        """
+        test for check the add method
+        """
         # 3/4 = 2/3 + 1/12
         self.assertEqual(Fraction(3,4), Fraction(1,12)+Fraction(2,3))
         # 31 / 35 = 3 / 5 + 2 / 7
-        self.assertEqual(Fraction(30, 35), Fraction(3, 5) + Fraction(2, 7))
+        self.assertEqual(Fraction(31, 35), Fraction(3, 5) + Fraction(2, 7))
+        # 29 / 14 = 4 / 7 + 3 / 2
+        self.assertEqual(Fraction(29, 14), Fraction(4, 7) + Fraction(3, 2))
+        # 23 / 48 = 2 / 6 + 5 / 8
+        self.assertEqual(Fraction(23, 24), Fraction(2, 6) + Fraction(5, 8))
+        # 76 / 63 = 3 / 7 + 7 / 9
+        self.assertEqual(Fraction(76, 63), Fraction(3, 7) + Fraction(7, 9))
+
+    def test_mul(self):
+        # 1 / 12 = 1 / 3 * 1 / 4
+        self.assertEqual(Fraction(1, 12), Fraction(1, 3) * Fraction(1, 4))
+        # 8 / 21 = 2 / 7 * 4 / 3
+        self.assertEqual(Fraction(8, 21), Fraction(2, 7) * Fraction(4, 3))
+        # 10 / 3 = -5 * 12 / -18
+        self.assertEqual(Fraction(10, 3), Fraction(-5) * Fraction(12, -18))
+        # -4 / 27 = 4 / 9 * -1 / 3
+        self.assertEqual(Fraction(-4, 27), Fraction(4, 9) * Fraction(-1, 3))
 
     def test_eq(self):
         f = Fraction(1,2)
@@ -60,9 +79,10 @@ class FractionTest(unittest.TestCase):
         self.assertTrue(f.__eq__(g))  # same thing
         self.assertFalse(f == h)
         self.assertFalse(f.__eq__(h))
-        #TODO write more tests using other cases.
-        # Consider special values like 0, 1/0, -1/0
-
+        i = Fraction(-4, 7)
+        self.assertFalse(i.__eq__(f))
+        j = Fraction(20000, 40002)
+        self.assertTrue(j.__eq__(h))
 
 
 if __name__ == '__main__':

@@ -13,7 +13,7 @@ class Fraction:
         """Initialize a new fraction with the given numerator
            and denominator (default 1).
         """
-        gcd = math.gcd(numerator, denominator)
+        gcd = math.gcd(int(numerator), int(denominator))
         self.numerator = numerator / gcd
         self.denominator = denominator / gcd
         self.fraction = self.numerator / self.denominator
