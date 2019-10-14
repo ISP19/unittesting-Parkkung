@@ -1,6 +1,6 @@
 ## Unit Testing Assignment
-
-by Bill Gates.
+[![Build Status](https://travis-ci.com/Parkkung/unittesting-Parkkung.svg?branch=master)](https://travis-ci.com/Parkkung/unittesting-Parkkung)
+by Apipark
 
 
 ## Test Cases for unique
